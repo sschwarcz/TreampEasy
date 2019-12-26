@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "73711488060",
+    "firebase_url": "https://trempeasy.firebaseio.com",
+    "project_id": "trempeasy",
+    "storage_bucket": "trempeasy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:73711488060:android:6dd65af2978501bc73c739",
+        "android_client_info": {
+          "package_name": "com.schwarcz.samuel.trempeasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "73711488060-usvo8macjfd324ijf1l0nrta37ejk5fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd_T7RUYG0TPHhvgTewPNcDzGgR2U9sLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "73711488060-usvo8macjfd324ijf1l0nrta37ejk5fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
