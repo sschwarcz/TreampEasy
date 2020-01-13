@@ -14,6 +14,8 @@ import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -66,6 +68,11 @@ public class ProfileActivity extends BaseActivity {
                 if(isCurrentUserLogged()){
                     dbRef.child("username").setValue(s.toString());
                     docref.update("username",s.toString());
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(s.toString()+",")
+
+                            .build();
+                    FirebaseAuth.getInstance().getCurrentUser().updateProfile(profileUpdates);
                 }
             }
         });
@@ -85,6 +92,7 @@ public class ProfileActivity extends BaseActivity {
                 if(isCurrentUserLogged()){
                     docref.update("telephone",s.toString());
                     dbRef.child("telephone").setValue(s.toString());
+
                 }
             }
         });
@@ -148,6 +156,7 @@ public class ProfileActivity extends BaseActivity {
                        mMail.setText(email);
                        mTel.setText(tel);
                        mfullname.setText(fullName);
+
 
 
                     }

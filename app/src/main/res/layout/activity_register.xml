@@ -7,15 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".controller.RegisterActivity">
-    <TextView
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="26dp"
-        android:textColor="@color/colorAccent"
-        android:layout_marginTop="20dp"
-        android:text="Welecome to TrempEasy"
-        />
+        android:src="@drawable/welcome"
+        android:layout_marginTop="10dp"
+        >
+    </ImageView>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

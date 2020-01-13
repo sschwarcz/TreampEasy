@@ -21,20 +21,19 @@
         android:id="@+id/mainapp_activity_floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="-145dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="-140dp"
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_manage" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="26dp"
-        android:textColor="@color/colorAccent"
-        android:layout_marginTop="-55dp"
-        android:text="TrempEasy"
-        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/treampeasy"
+
+            android:layout_marginTop="-60dp"
+            >
+        </ImageView>
     <TextView
         android:id="@+id/mainapp_activity_hey_name_text"
         android:layout_width="wrap_content"
@@ -42,7 +41,7 @@
         android:layout_gravity="center_horizontal"
         android:textSize="26dp"
         android:textColor="@color/colorAccent"
-        android:layout_marginTop="5dp"
+
         android:text="Hey !"
         />
 

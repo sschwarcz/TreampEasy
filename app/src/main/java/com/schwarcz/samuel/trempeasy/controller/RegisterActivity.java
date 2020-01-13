@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.schwarcz.samuel.trempeasy.R;
 import com.schwarcz.samuel.trempeasy.api.UserHelper;
 import com.schwarcz.samuel.trempeasy.base.BaseActivity;
@@ -55,6 +58,7 @@ public class RegisterActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         //firebase
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -227,6 +231,7 @@ public class RegisterActivity extends BaseActivity {
                         }
                         else{
                             createUserInFirestore();
+
                             Intent mainApp_Intent = new Intent(RegisterActivity.this , MainAppActivity.class);
                             startActivity(mainApp_Intent);
                         }
@@ -237,12 +242,21 @@ public class RegisterActivity extends BaseActivity {
 
         if (this.getCurrentUser() != null){
 
+
+
            // String urlPicture = (this.getCurrentUser().getPhotoUrl() != null) ? this.getCurrentUser().getPhotoUrl().toString() : null;
             String username =mUsername.getText().toString();
             String uid = this.getCurrentUser().getUid();
             String mail = mEmail.getText().toString();
             String tel = mPhoneNumber.getText().toString();
             String full = mFullname.getText().toString();
+
+            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(username+",")
+
+                    .build();
+            FirebaseAuth.getInstance().getCurrentUser().updateProfile(profileUpdates);
+
 
 
             UserHelper.createUser(uid, username,full ,mail , tel).addOnFailureListener(this.onFailureListener());

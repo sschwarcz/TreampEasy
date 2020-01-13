@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+
 import com.schwarcz.samuel.trempeasy.R;
 import com.schwarcz.samuel.trempeasy.MyTremp.CreateTrempActivity;
 
@@ -11,7 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button mSignIn,mRegister;
+
+    private ImageButton mSignIn,mRegister;
 
 
     @Override
@@ -19,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mSignIn = (Button) findViewById(R.id.main_activity_signin_button);
-        mRegister= (Button) findViewById(R.id.main_activity_register_button);
+        mSignIn = (ImageButton) findViewById(R.id.main_activity_signin_button);
+        mRegister= (ImageButton) findViewById(R.id.main_activity_register_button);
 
         mSignIn.setOnClickListener(new View.OnClickListener() {
             @Override

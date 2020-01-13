@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,7 +68,7 @@ public class LookingTrempResultActivity extends BaseActivity implements Serializ
                             }
                         }
                     }
-                    CustomList listAdapter = new CustomList(LookingTrempResultActivity.this, tremps2);
+                    CustomList listAdapter = new CustomList(LookingTrempResultActivity.this, tremps2 , R.drawable.car2);
 
                     ListView list;
 
@@ -94,9 +95,11 @@ public class LookingTrempResultActivity extends BaseActivity implements Serializ
                                         // The dialog is automatically dismissed when a dialog button is clicked.
                                         .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                             public void onClick(DialogInterface dialog, int which) {
-                                                Log.d("test", "nike sa mere");
+
                                                 FirebaseDatabase.getInstance().getReference().child("ListRegister").child(uid).child(tremps2.get(+position).getKey()).setValue(t);
-                                                TrempHelper.joinTremp(uid, driverUID, tremps2.get(+position).getKey(), Integer.parseInt(st.getPlaces()));
+                                                String name = FirebaseAuth.getInstance().getCurrentUser().getDisplayName();
+
+                                                TrempHelper.joinTremp(uid,name, driverUID, tremps2.get(+position).getKey(), Integer.parseInt(st.getPlaces()));
                                                 Intent see_registered_tremp = new Intent(LookingTrempResultActivity.this, TrempsIRegisteredActivity.class);
                                                 startActivity(see_registered_tremp);
                                             }
@@ -113,7 +116,7 @@ public class LookingTrempResultActivity extends BaseActivity implements Serializ
                     else {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(LookingTrempResultActivity.this);
                         builder1.setTitle("Not found");
-                        builder1.setMessage("Try to check with other expextations");
+                        builder1.setMessage("Try to check with other expectations");
                         builder1.setCancelable(true);
                         builder1.setNeutralButton(android.R.string.ok,
                                 new DialogInterface.OnClickListener() {

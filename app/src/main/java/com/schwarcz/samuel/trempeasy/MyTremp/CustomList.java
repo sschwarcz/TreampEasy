@@ -19,60 +19,6 @@ import com.schwarcz.samuel.trempeasy.model.Tremp;
 
 import java.util.Vector;
 
-import androidx.annotation.NonNull;
-
-//public class CustomList extends ArrayAdapter<DocumentReference>{
-//    private final Activity context;
-//   // private final Vector<DocumentReference> web;
-//    Vector<DocumentReference> tremps ;
-//    private final Integer imageId;
-//  //  TextView mFrom,mto , mhour , mplaces;
-//
-//    public CustomList(Activity context, Vector<DocumentReference> web) {
-//        super(context, R.layout.list_single ,web);
-//        Log.d("test","customList");
-//        this.context = context;
-//        this.tremps = web;
-//        this.imageId = R.drawable.ic_launcher_foreground;
-//    }
-//
-//    @Override
-//    public View getView(int position, View view, ViewGroup parent) {
-//       Log.d("test","getView");
-//        LayoutInflater inflater = context.getLayoutInflater();
-//        View rowView= inflater.inflate(R.layout.list_single, null, true);
-//        final TextView mFrom = (TextView) rowView.findViewById(R.id.list_item_from);
-//        final TextView mto = (TextView) rowView.findViewById(R.id.list_item_to);
-//        final TextView mhour = (TextView) rowView.findViewById(R.id.list_item_hour);
-//        final TextView mplaces = (TextView) rowView.findViewById(R.id.list_item_places);
-//        final ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
-//
-//        if(tremps!= null) {
-//            tremps.get(position).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                @Override
-//                public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                    if (documentSnapshot.exists()) {
-//                        String from = documentSnapshot.getString("from");
-//                        String to = documentSnapshot.getString("to");
-//                        String hour = documentSnapshot.getString("hour");
-//                        String places = documentSnapshot.getString("places");
-//                        mFrom.setText(from);
-//                        mto.setText(to);
-//                        mhour.setText(hour);
-//                        mplaces.setText(places);
-//                        imageView.setImageResource(imageId);
-//                        Log.d("test", from);
-//                    }
-//                }
-//            }).addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//
-//                }
-//            });
-//        }
-//        return rowView;
-//    }
 public class CustomList extends ArrayAdapter<DataSnapshot> {
     private final Activity context;
     // private final Vector<DocumentReference> web;
@@ -80,12 +26,12 @@ public class CustomList extends ArrayAdapter<DataSnapshot> {
     private final Integer imageId;
     //  TextView mFrom,mto , mhour , mplaces;
 
-    public CustomList(Activity context, Vector<DataSnapshot> web) {
+    public CustomList(Activity context, Vector<DataSnapshot> web ,Integer imageId) {
         super(context, R.layout.list_single, web);
         Log.d("test", "customList");
         this.context = context;
         this.tremps = web;
-        this.imageId = R.drawable.ic_launcher_foreground;
+        this.imageId = imageId;
     }
 
     @Override

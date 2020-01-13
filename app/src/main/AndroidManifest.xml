@@ -14,13 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MyTremp.TrempsIRegisteredActivity"></activity>
+        <activity
+            android:label="Tremp Registered"
+            android:name=".MyTremp.TrempsIRegisteredActivity"></activity>
         <activity
             android:name=".lookingTremp.LookingTrempResultActivity"
-            android:label="Result" />
-        <activity android:name=".lookingTremp.LookingTrempActivity" />
-        <activity android:name=".MyTremp.SeeMyTrempActivity" />
-        <activity android:name=".MyTremp.CreateTrempActivity" />
+            android:label="Tremp result" />
+        <activity
+            android:label="Looking for a tremp"
+            android:name=".lookingTremp.LookingTrempActivity" />
+        <activity
+            android:label="My Tremps"
+            android:name=".MyTremp.SeeMyTrempActivity" />
+        <activity
+            android:label="Create Tremp"
+            android:name=".MyTremp.CreateTrempActivity" />
         <activity
             android:name=".auth.ProfileActivity"
             android:label="TrempEasy"
@@ -32,9 +40,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".controller.RegisterActivity" />
-        <activity android:name=".controller.SignInActivity" />
-        <activity android:name=".controller.MainAppActivity" />
+        <activity
+            android:label="TrempEasy"
+            android:name=".controller.RegisterActivity" />
+        <activity
+            android:label="TrempEasy"
+            android:name=".controller.SignInActivity" />
+        <activity
+            android:label="TrempEasy"
+            android:name=".controller.MainAppActivity" />
     </application>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>

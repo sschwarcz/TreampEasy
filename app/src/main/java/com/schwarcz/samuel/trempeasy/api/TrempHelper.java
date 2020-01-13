@@ -43,13 +43,9 @@ public class TrempHelper {
         return TrempHelper.getTrempCollection().document(uid+date).set(trempToCreate);
     }
 
-    public static void joinTremp(final String useruid ,final String driverUID,final String trempUID,final int places) {
+    public static void joinTremp(final String useruid ,final String username ,final String driverUID,final String trempUID,final int places) {
 
        // DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().getRef().child("Users").child(useruid);
-
-
-
-
 
 
 
@@ -66,7 +62,9 @@ public class TrempHelper {
                     int u = totplaces-i+1;
                     String index = ""+u;
                     Log.d("test for",index);
-                    FirebaseDatabase.getInstance().getReference().child("ListTremp").child(driverUID).child(trempUID).child("traveller").child(index).setValue(useruid);
+                    FirebaseDatabase.getInstance().getReference().child("ListTremp").child(driverUID).child(trempUID).child("traveller").child(index).setValue((useruid));
+                    FirebaseDatabase.getInstance().getReference().child("ListTremp").child(driverUID).child(trempUID).child("traveller").child(index).child(useruid).setValue(useruid);
+                    FirebaseDatabase.getInstance().getReference().child("ListTremp").child(driverUID).child(trempUID).child("traveller").child(index).child(useruid).setValue(username);
                   total = ""+(i-1);
                   Log.d("test total",total);
                 }
@@ -81,6 +79,11 @@ public class TrempHelper {
 
             }
         });
+
+
+    }
+
+    public static void getCall(String uid) {
 
 
     }

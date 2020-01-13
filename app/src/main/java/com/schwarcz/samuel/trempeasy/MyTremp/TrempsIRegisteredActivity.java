@@ -2,10 +2,15 @@ package com.schwarcz.samuel.trempeasy.MyTremp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +33,7 @@ public class TrempsIRegisteredActivity extends BaseActivity {
     private DatabaseReference dbRef;
     private String uid ;
     private ListView mListview;
+    public static final int REQUEST_CALL = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +56,7 @@ public class TrempsIRegisteredActivity extends BaseActivity {
 
 
                     }
-                    CustomList listAdapter = new CustomList(TrempsIRegisteredActivity.this, tremps2);
+                    CustomList listAdapter = new CustomList(TrempsIRegisteredActivity.this, tremps2,R.drawable.car2);
 
                     ListView list;
                     list = (ListView) findViewById(R.id.list);
@@ -60,15 +66,19 @@ public class TrempsIRegisteredActivity extends BaseActivity {
                         @Override
                         public void onItemClick(AdapterView<?> parent, View view,
                                                 int position, long id) {
-                            Toast.makeText(TrempsIRegisteredActivity.this, "You Clicked at " + tremps2.get(+position), Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(TrempsIRegisteredActivity.this, "You Clicked at " + tremps2.get(+position), Toast.LENGTH_SHORT).show();
+                            Log.d("test",tremps2.get(+position).child("uid").getValue().toString());
+                            makePhoneCall("driver" ,tremps2.get(+position).child("uid").getValue().toString() );
+
+
                         }
-                    });}else {
+                    });}
+                    else {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(TrempsIRegisteredActivity.this);
                         builder1.setTitle("Not found");
                         builder1.setMessage("you didn't register any tremp yet");
                         builder1.setCancelable(true);
-                        builder1.setNeutralButton(android.R.string.ok,
-                                new DialogInterface.OnClickListener() {
+                        builder1.setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
                                         Intent other_expectation_intent = new Intent(TrempsIRegisteredActivity.this, MainAppActivity.class);
@@ -78,6 +88,47 @@ public class TrempsIRegisteredActivity extends BaseActivity {
 
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
+                    }
+                }
+                private void makePhoneCall(String username , final String uidTrempist) {
+                    if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
+                        ActivityCompat.requestPermissions(TrempsIRegisteredActivity.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL);
+                        makePhoneCall(username ,uidTrempist);
+
+                    }
+                    else{
+                        new AlertDialog.Builder(TrempsIRegisteredActivity.this)
+                                .setTitle("Call your driver")
+                                .setMessage("Are you sure you want to call the "+username+" ?")
+                                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        DatabaseReference refUser=    FirebaseDatabase.getInstance().getReference().getRef().child("Users").child(uidTrempist).child("telephone");
+                                        refUser.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                                String dial = "tel:"+dataSnapshot.getValue();
+                                                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+
+                                    }
+                                })
+
+                                // A null listener allows the button to dismiss the dialog and take no further action.
+                                .setNegativeButton(android.R.string.no, null)
+                                .setIcon(android.R.drawable.ic_menu_call)
+                                .show();
+
+                        ///////////
+
+
                     }
                 }
 
