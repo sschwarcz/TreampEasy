@@ -1,90 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.schwarcz.samuel.trempeasy.controller.MainAppActivity">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_centerInParent="true">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/mainapp_activity_floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="-140dp"
-        android:clickable="true"
-        app:srcCompat="@android:drawable/ic_menu_manage" />
+    <RelativeLayout tools:context="com.schwarcz.samuel.trempeasy.controller.MainAppActivity" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:src="@drawable/treampeasy"
 
-            android:layout_marginTop="-60dp"
-            >
-        </ImageView>
-    <TextView
-        android:id="@+id/mainapp_activity_hey_name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="26dp"
-        android:textColor="@color/colorAccent"
+    -<ScrollView android:layout_height="match_parent" android:layout_width="match_parent" android:layout_centerInParent="true">
 
-        android:text="Hey !"
-        />
 
-    <Button
-        android:id="@+id/mainapp_activity_looking_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:height="100dp"
-        android:textSize="20dp"
-        android:text="looking for a ride"/>
-    <Button
-        android:id="@+id/mainapp_activity_planning_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:height="100dp"
-        android:textSize="20dp"
-        android:text="Create a tremp"/>
-    <Button
-        android:id="@+id/mainapp_activity_my_tremps_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:height="100dp"
-        android:textSize="20dp"
-        android:text="tremps i add"/>
-        <Button
-            android:id="@+id/mainapp_activity_my_the_tremp_i_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:height="100dp"
-            android:textSize="20dp"
-            android:text="tremps i registered"/>
-    </LinearLayout>
+    -<LinearLayout android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" android:gravity="center">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:layout_height="wrap_content" android:layout_width="wrap_content" app:srcCompat="@android:drawable/ic_menu_my_calendar" android:clickable="true" android:layout_marginLeft="-140dp" android:layout_marginTop="20dp" android:id="@+id/mainapp_activity_floatingActionButton"/>
+
+    <ImageView android:layout_height="50dp" android:layout_width="wrap_content" android:layout_marginTop="-60dp" android:src="@drawable/treampeasy"> </ImageView>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/mainapp_activity_hey_name_text" android:text="Hey !" android:textColor="@color/colorAccent" android:textSize="26dp" android:layout_gravity="center_horizontal"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/mainapp_activity_looking_button" android:text="looking for a ride" android:textColor="@color/colorAccent" android:textSize="20dp" android:background="@color/colorAccent2" android:height="100dp" android:layout_marginEnd="10dp" android:layout_marginStart="10dp"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="5dp" android:id="@+id/mainapp_activity_planning_button" android:text="Create a tremp" android:textColor="@color/colorAccent" android:textSize="20dp" android:background="@color/colorAccent2" android:height="100dp" android:layout_marginEnd="10dp" android:layout_marginStart="10dp"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="5dp" android:id="@+id/mainapp_activity_my_tremps_button" android:text="tremps i add" android:textColor="@color/colorAccent" android:textSize="20dp" android:background="@color/colorAccent2" android:height="100dp" android:layout_marginEnd="10dp" android:layout_marginStart="10dp"/>
+
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="5dp" android:id="@+id/mainapp_activity_my_the_tremp_i_register" android:text="tremps i registered" android:textColor="@color/colorAccent" android:textSize="20dp" android:background="@color/colorAccent2" android:height="100dp" android:layout_marginEnd="10dp" android:layout_marginStart="10dp"/>
+
+</LinearLayout>
 
 </ScrollView>
 

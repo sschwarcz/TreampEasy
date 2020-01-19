@@ -52,6 +52,8 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginTop="16dp"
                 android:text="next"
+                android:textColor="@color/colorAccent"
+                android:background="@color/colorAccent2"
                 android:textStyle="bold" />
 
         </LinearLayout>

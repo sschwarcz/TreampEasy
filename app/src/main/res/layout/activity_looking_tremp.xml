@@ -1,168 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".lookingTremp.LookingTrempActivity">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/colorAccent2"
-        android:hint="Looking for a tremp"
-        android:textSize="30dp"
-        android:width="30dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        >
-    </TextView>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint="from:"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_from"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint="To:"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint="After:"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_hours_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint=":"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_minutes_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint="Before:"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_hours_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint=":"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_minutes_end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textSize="30dp"
-            android:hint="places:"
-            ></TextView>
-        <Spinner
-            android:id="@+id/looking_for_spinner_places"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            >
-        </Spinner>
-    </LinearLayout>
-    <Button
-        android:id="@+id/looking_for_search_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="20dp"
-        android:padding="30dp"
-        android:hint="Search"
-        android:textColor="@color/colorAccent"
-        android:textSize="30sp"
-        ></Button>
+<?xml version="1.0" encoding="UTF-8"?>
+
+    <LinearLayout tools:context=".lookingTremp.LookingTrempActivity" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="match_parent" android:gravity="center" android:layout_gravity="center" android:textColor="@color/colorAccent" android:width="30dp" android:textSize="30dp" android:text="Looking for a tremp" android:hint="Looking for a tremp" android:textStyle="bold" android:layout_marginTop="20dp"> </TextView>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint="from:" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_from"> </Spinner>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint="To:" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_to"> </Spinner>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint="After:" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_hours_start"> </Spinner>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint=":" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_minutes_start"> </Spinner>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint="Before:" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_hours_end"> </Spinner>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint=":" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_minutes_end"> </Spinner>
+
+</LinearLayout>
+
+
+    -<LinearLayout android:orientation="horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_marginTop="20dp">
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:textSize="30dp" android:hint="places:" android:layout_marginRight="10dp" android:layout_marginLeft="10dp"/>
+
+    <Spinner android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/looking_for_spinner_places"> </Spinner>
+
+</LinearLayout>
+
+    <Button android:layout_height="wrap_content" android:layout_width="match_parent" android:textColor="@color/colorAccent" android:textSize="30sp" android:text="Search" android:hint="Search" android:layout_marginTop="20dp" android:id="@+id/looking_for_search_button" android:background="@color/colorAccent2" android:padding="30dp" android:layout_marginEnd="20dp" android:layout_marginStart="20dp"/>
 
 </LinearLayout>
